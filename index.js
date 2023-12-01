@@ -87,7 +87,7 @@ app.get('/groups/:id', async (req, res) => {
 
 
 // Démarrer le serveur
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
     console.log(`Le serveur écoute sur le port ${port}`);
 });
