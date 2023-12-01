@@ -5,12 +5,15 @@ const exphbs  = require('express-handlebars');
 
 const app = express();
 
-app.engine('handlebars', exphbs());
+// Configuration de Handlebars
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
 
 const prisma = new PrismaClient();
 
-// Créer des routes pour l'authentification
+//routes pour l'authentification
 app.get('/signup', (req, res) => {
     res.render('signup');
 });
@@ -27,12 +30,12 @@ app.post('/login', (req, res) => {
     // Traiter le formulaire de connexion
 });
 
-// Créer des routes pour le tableau de bord de l'utilisateur
+//routes pour le tableau de bord de l'utilisateur
 app.get('/dashboard', (req, res) => {
     // Afficher le tableau de bord de l'utilisateur
 });
 
-// Créer des routes pour la gestion des groupes
+//routes pour la gestion des groupes
 app.get('/groups/new', (req, res) => {
     // Afficher le formulaire de création de groupe
 });
@@ -45,7 +48,7 @@ app.post('/groups/:id/users', (req, res) => {
     // Ajouter un utilisateur à un groupe
 });
 
-// Créer des routes pour la gestion des rappels
+//routes pour la gestion des rappels
 app.get('/groups/:id/reminders/new', (req, res) => {
     // Afficher le formulaire de création de rappel
 });
@@ -63,7 +66,7 @@ app.delete('/groups/:id/reminders/:reminderId', (req, res) => {
 });
 
 
-// Modifier la route du tableau de bord pour afficher les rappels et les groupes
+//route du tableau de bord pour afficher les rappels et les groupes
 app.get('/dashboard', async (req, res) => {
     // Récupérer les rappels et les groupes de l'utilisateur
     // Afficher les rappels et les groupes

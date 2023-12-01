@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/wilfrieddpt/Remindr_Hugo_Wilfried/issues"
   },
-  "homepage": "https://github.com/wilfrieddpt/Remindr_Hugo_Wilfried#readme"
+  "homepage": "https://github.com/wilfrieddpt/Remindr_Hugo_Wilfried#readme",
+  "dependencies": {
+    "@prisma/client": "^5.6.0",
+    "express-handlebars": "^7.1.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.6.0"
+  }
 }
