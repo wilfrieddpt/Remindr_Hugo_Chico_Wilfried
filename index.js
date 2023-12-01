@@ -9,7 +9,7 @@ const app = express();
 const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));    
 
 const prisma = new PrismaClient();
 
@@ -87,7 +87,7 @@ app.get('/groups/:id', async (req, res) => {
 
 
 // Démarrer le serveur
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
     console.log(`Le serveur écoute sur le port ${port}`);
 });
