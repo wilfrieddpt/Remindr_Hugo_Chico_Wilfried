@@ -15,10 +15,15 @@ app.get('/', (req, res) => {
     res.render('accueil'); // Assure-toi d'avoir un fichier accueil.handlebars dans ton dossier "views"
 });
 
-// Définir une route exemple
-app.get('/accueil', (req, res) => {
-  res.render('accueil', { message: 'Bonjour, ceci est un message dynamique.' });
+app.get('/signup', (req, res) => {
+  res.render('signup');
 });
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+
 
 
 // Démarrer le serveur
