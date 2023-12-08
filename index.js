@@ -19,11 +19,17 @@ app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+app.post('/signup', (req, res) => {
+  res.render('signup');
+});
+
 app.get('/login', (req, res) => {
   res.render('login');
 });
 
-
+app.post('/login', (req, res) => {
+  res.render('login');
+}); 
 
 
 // Démarrer le serveur
