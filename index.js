@@ -10,6 +10,10 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
+//Importation de prisma
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
 // Définir une route exemple
 app.get('/', (req, res) => {
     res.render('accueil'); // Assure-toi d'avoir un fichier accueil.handlebars dans ton dossier "views"
