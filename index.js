@@ -28,7 +28,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: { 
-      maxAge: 3600000000 // Durée de la session en millisecondes (1 heure dans cet exemple)
+      maxAge: 36000 // Durée de la session en millisecondes (1 heure dans cet exemple)
   }
 }));
 
