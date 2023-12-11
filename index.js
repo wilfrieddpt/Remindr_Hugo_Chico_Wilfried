@@ -28,7 +28,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: { 
-      maxAge: 36000 // Durée de la session en millisecondes (1 heure dans cet exemple)
+      maxAge: 36000
   }
 }));
 
@@ -146,8 +146,8 @@ app.get('/dashboard', (req, res) => {
     // Utilisateur connecté, rend la page du tableau de bord
     res.render('dashboard', { username: req.session.user.username });
   } else {
-    // Utilisateur non connecté, redirige vers la page de login
-    res.redirect('/login');
+    // Utilisateur non connecté, redirige vers la page d'accueil
+    res.redirect('/');
   }
 });
 
