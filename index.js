@@ -97,6 +97,20 @@ app.get('/confirmation', (req, res) => {
   res.render('confirmation');
 });
 
+app.get('/dashboard', (req, res) => {
+    const fakeTasks = [
+        {
+            title: 'Tache 1',
+            color: 'bleu',
+            description: 'Faire la tache 1',
+            Deadline: '24/08/2002',
+            validated: false
+        }
+    ];
+    const username = { username: req.session.user.username };
+    res.render('Tableau_De_Bord', { tasks: fakeTasks }, { username });
+});
+
 
 
 // Route pour afficher le formulaire de connexion
