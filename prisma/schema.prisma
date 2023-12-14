@@ -11,8 +11,39 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  username  String
+  username String  @id
   password String
-  email String  @unique
+  email    String  @unique
+  groups   Group[]
+  tasks    Task[]
+}
+
+model Group {
+  name  String @id
+  users User[]
+}
+
+model Task {
+  id          Int       @id @default(autoincrement())
+  publisherId String
+  publisher   User      @relation(fields: [publisherId], references: [username])
+  name        String
+  dateSubmit  DateTime  @default(now())
+  description String?
+  validated   Boolean   @default(false)
+  color       ColorList @default(WHITE)
+}
+
+enum ColorList {
+  RED
+  BLUE
+  GREEN
+  YELLOW
+  PURPLE
+  PINK
+  ORANGE
+  GREY
+  WHITE
+  BROWN
+  BLACK
 }
