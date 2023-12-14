@@ -95,7 +95,7 @@ app.post('/signup', async (req, res) => {
       data: {
         username,
         email,
-        password,E
+        password,
       },
     });
 
