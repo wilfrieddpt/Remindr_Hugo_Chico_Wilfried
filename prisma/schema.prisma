@@ -21,12 +21,15 @@ model User {
 model Group {
   name  String @id
   users User[]
+  Task  Task[]
 }
 
 model Task {
   id          Int       @id @default(autoincrement())
   publisherId String
   publisher   User      @relation(fields: [publisherId], references: [username])
+  groupID     String
+  group       Group     @relation(fields: [groupID], references: [name])
   name        String
   dateSubmit  DateTime  @default(now())
   description String?
